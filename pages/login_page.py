@@ -1,6 +1,6 @@
 from .base_page import BasePage
 from .locators import LoginPageLocators
-from selenium import webdriver
+from pages import data
 
 class LoginPage(BasePage):
     def should_be_login_page(self):
@@ -11,8 +11,29 @@ class LoginPage(BasePage):
     def should_be_login_url(self):
         assert "login" in self.browser.current_url, "Is not login url"
 
-    def should_be_login_form(self):
-        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "Login form is not presented"
+    def sign_up(self, login, password, repeat_password):
+        user_login = self.browser.find_element(*LoginPageLocators.SIGN_UP_LOGIN)
+        user_password = self.browser.find_element(*LoginPageLocators.SIGN_UP_PASSWORD)
+        user_repeat_password = self.browser.find_element(*LoginPageLocators.SIGN_UP_REPEAT_PASSWORD)
+        button_sign_up = self.browser.find_element(*LoginPageLocators.SIGN_UP_BUTTON)
+        user_login.send_keys(login)
+        user_password.send_keys(password)
+        user_repeat_password.send_keys(repeat_password)
+        button_sign_up.click()
 
-    def should_be_register_form(self):
-        assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "Registration form is not presented"
+    def success_registration(self):
+        assert self.browser.current_url == data.MAIN_PAGE_LINK, "Registration finished with an error"
+
+    def sign_in(self, login, password):
+        user_login = self.browser.find_element(*LoginPageLocators.SIGN_IN_LOGIN)
+        user_password = self.browser.find_element(*LoginPageLocators.SIGN_IN_PASSWORD)
+        button_sign_up = self.browser.find_element(*LoginPageLocators.SIGN_IN_BUTTON)
+        user_login.send_keys(login)
+        user_password.send_keys(password)
+        button_sign_up.click()
+
+    def success_login(self):
+        assert self.browser.current_url == data.MAIN_PAGE_LINK, "Login finished with an error"
+
+
+

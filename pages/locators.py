@@ -1,17 +1,27 @@
 from selenium.webdriver.common.by import By
 
-
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    PROFILE_LINK = (By.CSS_SELECTOR, "[href = '/ru/accounts/']")
 
 class LoginPageLocators():
-    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-    REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
     SIGN_IN_LOGIN = (By.CSS_SELECTOR, "#id_login-username")
     SIGN_IN_PASSWORD = (By.CSS_SELECTOR, "#id_login-password")
-    SIGN_UP_LOGIN = (By.CSS_SELECTOR, "#register_form")
-    SIGN_UP_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password")
-    SIGN_IN_REPEAT_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password2")
+    SIGN_IN_BUTTON = (By.CSS_SELECTOR, "[name = login_submit]")
+    SIGN_UP_LOGIN = (By.CSS_SELECTOR, "#id_registration-email")
+    SIGN_UP_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
+    SIGN_UP_REPEAT_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password2")
+    SIGN_UP_BUTTON = (By.CSS_SELECTOR, "[name = registration_submit]")
 
 class ProductPageLocators():
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
+
+class AccountPageLocators():
+    ADDRESS_BOOK_TAB = (By.CSS_SELECTOR, "[href = '/ru/accounts/addresses/']")
+    ADD_NEW_ADDRESS = (By.CSS_SELECTOR, "[href = '/ru/accounts/addresses/add/']")
+    APPEAL = (By.CSS_SELECTOR, "#id_title")
+    FIRST_NAME = (By.CSS_SELECTOR, "#id_first_name")
+    LAST_NAME = (By.CSS_SELECTOR, "#id_last_name")
+    FIRST_LINE_ADDRESS = (By.CSS_SELECTOR, "id_line1")
+    SECOND_LINE_ADDRESS = (By.CSS_SELECTOR, "id_line2")
+    THIRD_LINE_ADDRESS = (By.CSS_SELECTOR, "id_line3")
