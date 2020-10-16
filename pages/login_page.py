@@ -22,7 +22,7 @@ class LoginPage(BasePage):
         button_sign_up.click()
 
     def success_registration(self):
-        assert self.browser.current_url == data.MAIN_PAGE_LINK, "Registration finished with an error"
+        assert data.MAIN_PAGE_LINK in self.browser.current_url, "Registration finished with an error"
 
     def sign_in(self, login, password):
         user_login = self.browser.find_element(*LoginPageLocators.SIGN_IN_LOGIN)
@@ -33,7 +33,7 @@ class LoginPage(BasePage):
         button_sign_up.click()
 
     def success_login(self):
-        assert self.browser.current_url == data.MAIN_PAGE_LINK, "Login finished with an error"
+        assert data.MAIN_PAGE_LINK in self.browser.current_url, "Login finished with an error"
 
 
 

@@ -5,5 +5,3 @@ class ProductPage(BasePage):
     def add_product_to_basket(self):
         button = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET)
         button.click()
-    #def should_be_name_product(self):
-
