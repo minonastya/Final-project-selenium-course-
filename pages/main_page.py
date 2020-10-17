@@ -1,5 +1,6 @@
 from .base_page import BasePage
 from pages.locators import MainPageLocators
+from selenium import webdriver
 
 
 class MainPage(BasePage):
@@ -21,6 +22,6 @@ class MainPage(BasePage):
         search_button.click()
 
     def go_to_product_page(self):
-        img_book = self.browser.find_element(*MainPageLocators.IMAGE_OF_PRODUCT)
-        self.browser.execute_script("window.scrollBy(0, 100);")
+        self.browser.execute_script("window.scrollBy(0, 300);")
+        img_book = self.browser.find_element(*MainPageLocators.PRODUCT)
         img_book.click()

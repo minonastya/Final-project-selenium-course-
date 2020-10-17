@@ -4,7 +4,7 @@ from pages.account_page import AccountPage
 from pages import data
 import pytest
 
-
+@pytest.mark.need_review_custom_scenarios
 def test_success_adding_address(browser):
     #Arrange
     link = data.MAIN_PAGE_LINK

@@ -3,14 +3,6 @@ from .locators import LoginPageLocators
 from pages import data
 
 class LoginPage(BasePage):
-    def should_be_login_page(self):
-        self.should_be_login_url()
-        self.should_be_login_form()
-        self.should_be_register_form()
-
-    def should_be_login_url(self):
-        assert "login" in self.browser.current_url, "Is not login url"
-
     def sign_up(self, login, password, repeat_password):
         user_login = self.browser.find_element(*LoginPageLocators.SIGN_UP_LOGIN)
         user_password = self.browser.find_element(*LoginPageLocators.SIGN_UP_PASSWORD)

@@ -1,11 +1,13 @@
 from selenium.webdriver.common.by import By
+from pages import data
 
 class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     PROFILE_LINK = (By.CSS_SELECTOR, ".icon-user")
     SEARCH_INPUT = (By.CSS_SELECTOR, "#id_q")
     SEARCH_BUTTON = (By.CSS_SELECTOR, "input.btn-default ")
-    IMAGE_OF_PRODUCT = (By.CSS_SELECTOR, ".thumbnail")
+    PRODUCT = (By.CSS_SELECTOR, "h3 a" )
+
 
 class LoginPageLocators():
     SIGN_IN_LOGIN = (By.CSS_SELECTOR, "#id_login-username")
@@ -18,6 +20,9 @@ class LoginPageLocators():
 
 class ProductPageLocators():
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    ALERT = (By.CSS_SELECTOR, ".alertinner")
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    BASKET_BUTTON = (By.CSS_SELECTOR, "span [href *= 'basket'].btn-default")
 
 class AccountPageLocators():
     ADDRESS_BOOK_TAB = (By.CSS_SELECTOR, "[href *= '/accounts/addresses/']")
@@ -35,3 +40,6 @@ class AccountPageLocators():
     PHONE = (By.CSS_SELECTOR, "#id_phone_number")
     NOTES = (By.CSS_SELECTOR, "#id_notes")
     SAVE_ADDRESS = (By.CSS_SELECTOR, ".btn-lg")
+
+class BasketPageLocators():
+    BUTTON_ORDERING = (By.CSS_SELECTOR, ".btn-block")

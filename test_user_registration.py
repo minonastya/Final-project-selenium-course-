@@ -3,6 +3,7 @@ from pages.login_page import LoginPage
 from pages import data
 import pytest
 
+@pytest.mark.need_review_custom_scenarios
 def test_success_registration(browser):
     #Arrange
     link = data.MAIN_PAGE_LINK
@@ -15,6 +16,7 @@ def test_success_registration(browser):
     #Assert
     login_page.success_registration()
 
+@pytest.mark.need_review_custom_scenarios
 def test_different_passwords(browser):
     #Arrange
     link = data.MAIN_PAGE_LINK
@@ -27,6 +29,7 @@ def test_different_passwords(browser):
     #Assert
     login_page.success_registration()
 
+@pytest.mark.need_review_custom_scenarios
 def test_insecure_password(browser):
     #Arrange
     link = data.MAIN_PAGE_LINK
